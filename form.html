@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        .form{
+            width: 90%;
+            max-width: 450px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 50px 60px 70px;
+            text-align: center;
+            background-color:lightgray;
+        }
+        .btn{
+            width: 30%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="form">
+     <form action="conf.html">
+    <h1>Loan Form </h1>
+    
+        <label for="fname">Full Name</label>
+        <input type="text" name="fmane" placeholder="Enter Your Full Name" id="fname"><br><br>
+
+      
+
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter Your Email" id="email"><br><br>
+
+
+        <label for="Pan">Pan Number</label>
+        <input type="char"  name="Pnum" id="Pnum"><br><br>
+
+
+        <label for="Loan">Loan Ammount</label>
+        <input type="number"  maxlength="9" name="Loan" id="Loan"><br><br>
+        
+
+      
+
+     
+
+
+        <button class="btn" onclick="generateotp()">Submit</button>
+
+
+    </form>
+    </div>
+    
+    <script>
+        function generateotp(){
+            var mainotp = Math.round(Math.random()*20000)+20000;
+            localStorage.setItem("mainotp",mainotp);
+            alert(mainotp);
+            window.location.assign("conf.html");
+
+        }
+        /*document.querySelector('#btn').addEventListener('click',()=>{
+            var mainOTP = Math.floor(1000 + Math.random() * 9000);
+            console.log(mainOTP);
+            alert(mainOTP) 
+            window.localStorage.setItem("otp",mainOTP);
+
+            /*localStorage.setItem('mainOTP',mainOTP);
+            window.location.assign('/conf.html');
+        })*/
+    </script>
+</body>
+</html>
